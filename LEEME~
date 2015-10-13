@@ -1,0 +1,88 @@
+Caracteristicas y funcionalidades de ficheros entregados:
+
+Directorios:
+dir:
+	Este directorio contiene el (unico) video que contiene nuestro servidor por ahora.
+	Contiene el audio y el video ya separados en 2 componentes
+	y un fichero config que contiene la informacion necesaria para RTSP
+
+Ficheros:
+audio_serv.h:
+	Este fichero contiene la declaracion de la funcion que en el servidor 
+	se encargara de ir enviando por RTP la parte de audio del corto de animacion
+
+audio_serv.c:
+	Contiene la implementacion de la funcion descrita anteriormente
+
+cliente.h:
+	Contiene la declaracion de todas la funciones encargadas de la recepcion
+	y reproduccion del video por parte del cliente. Ademas contiene funciones
+	relacionadas las tareas propias de RTSP (tales como obtener los argumentos 
+	para iniciar una sesion RTSP).
+
+cliente.c:
+	Contiene la implementacion de las funciones descritas anteriormente
+
+Doxyfile:
+	Fichero para generar la documentacion funcional. Como hacerlo se explica
+	mas abajo, con las fincionalidades del makefile
+
+makefile:
+	Fichero para generar los objetos y ejecutables de la practica. Como ya
+	teniamos dos ejecutables, uno para el cliente y otro para el
+	servidor los hemos dejado, y enlazan al hacer "make". Para ahorar espacio,
+	se incluye un objetivo adicional "documentacion". Al hacer make de
+	este objetivo se genera automaticamente la documentacion funcional.
+
+RTP.h:
+	Contiene la declaracion de las funciones relaccionadas con el manejo de 
+	paquetes RTP, creacion de sockets, envio y rececion de paquetes.
+
+RTP.c:
+	Contiene la implementacion de las funciones descritas anteriormente
+
+RTCP.h:
+    Contiene la declaracion de funciones relacionadas con el modulo RTCP
+
+RTCP.c: Implementación de las funciones relacionadas con el modulo RTCP
+
+RTSP.h:
+	Contiene la declaracion de las funciones relaccionadas con el manejo de 
+	paquetes RTSP, creacion y conexion de sockets, envio y rececion de paquetes 
+	y todas las estructuras necesarias para crear correctamente paquetes RTSP
+
+RTSP.c:
+	Contiene la implementacion de las funciones descritas anteriormente
+
+servidor.c:
+	Contiene el codigo del programa main del servidor. Enlaza correctamente
+	aunque la calidad con la que se reciben sus mensajes aun esta en fase de
+	pruebas.
+
+socket_funcs.h:
+	Contiene la declaracion de las funciones relaccionadas con la creacion
+	y conexion (solo TCP) de sockets, tanto TCP como UDP
+
+socket_funcs.c:
+	Contiene la implementacion de las funciones descritas anteriormente
+
+tipos_serv.h:
+	Contiene enumerados y defines que se usaran en la correcta coordinacion
+	de los hilos y tamanos de paquetes enviados por RTP.
+
+video.c:
+	Main del servidor, que crea la interfaz grafica y se pone a escuchar eventos
+	de ella.
+
+video_funcs.h:
+	Fichero con la declaracion de las funciones escuchantes de los eventos
+	que llegan a la interfaz grafica. Ademas contiene variables necesarias
+	para el correcto funcionamiento del cliente (tales como numeros de puerto)
+
+video_serv.h:
+	Este fichero contiene la declaracion de la funcion que en el servidor 
+	se encargara de ir enviando por RTP la parte de video del corto de animacion
+
+video_serv.c:
+	Contiene la implementacion de la funcion descrita anteriormente
+
